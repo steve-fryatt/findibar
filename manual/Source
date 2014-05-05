@@ -1,0 +1,106 @@
+<document title="FindIBar">
+<define name="version" value="">
+<define name="date" value="" length=30 align="right">
+
+
+
+
+<literal mode="Text">
+=============================================================================
+FindIBar - Bring Icon Bar to fron on demand                      Version $$version$$
+
+(C) Stephen Fryatt, 1998-2014                  $$date$$
+=============================================================================
+
+</literal>
+
+
+
+<chapter title="Licence" file="Licence">
+
+<cite>FindIBar</cite> is licensed under the EUPL, Version&nbsp;1.1 only (the &ldquo;Licence&rdquo;); you may not use this work except in compliance with the Licence.
+
+You may obtain a copy of the Licence at <link ref="#url http://joinup.ec.europa.eu/software/page/eupl">http://joinup.ec.europa.eu/software/page/eupl</link>
+
+Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an &ldquo;<strong>as is</strong>&rdquo; basis, <strong>without warranties or conditions of any kind</strong>, either express or implied.
+
+See the Licence for the specific language governing permissions and limitations under the Licence.
+
+The source for <cite>FindIBar</cite> can be found alongside this binary download, at <link ref="#url http://www.stevefryatt.org.uk/software">http://www.stevefryatt.org.uk/software</link>
+
+</chapter>
+
+
+
+
+<chapter title="Introduction" file="Intro">
+
+<cite>FindIBar</cite> is an Icon Bar finder as featured in the new Nested WIMP. If the bar is obscured by windows, move the pointer to the bottom of the screen and the bar will pop up; move the pointer out of the bar and it will fall to the back again.
+
+</chapter>
+
+
+
+
+<chapter title="Installing FindIBar" file"Install">
+
+<cite>FindIBar</cite> requires RISC&nbsp;OS&nbsp;3.1 or later. It can be run off a hard disc or floppy disc.
+
+To install <cite>FindIBar</cite> on a hard disc, copy the <cite>FindIBar</cite> module to a suitable place on your disc. If you want it to run on startup, <cite>FindIBar</cite> should be placed in your boot sequence. On a RiscPC or a machine with the new boot structure installed, this can be done by copying it into the <file>!Boot.Choices.Boot.Tasks</file> directory (<key>shift</key>-double-click on <file>!Boot</file> in the root directory of your hard drive, double-click on the <file>Choices</file> directory that appears, then on the <file>Boot</file> directory, then on the <file>Tasks</file> directory). On older machines you will have to make your own arrangements, although you will probably have built your own boot sequence anyway.
+
+</chapter>
+
+
+
+
+<chapter title="Using FindIBar" file="Use">
+
+Run the <cite>FindIBar</cite> module (double-click it from the desktop, or RMRun it). Better still, for regular use install it somewhere where it will load every time your machine starts (<file>!Boot.Choices.Boot.Tasks</file> on a RiscPC).
+
+</chapter>
+
+
+
+
+<chapter title="*IBarMargin" file="Margin">
+
+One star command is provided, to set the distance from the bottom of the screen that the pointer must be to bring the bar to the front. With no argument, the current setting is printed (2 OS Units, or the bottom row of pixels, by default). Specify a new value to change the distance (eg. <command>*IBarMargin 20</command> would set 20 OS Units).
+
+</chapter>
+
+
+
+
+
+<chapter title="How It Works" file="How">
+
+<cite>FindIBar</cite> is a bit kludgy &ndash; sorry. This is because the &ldquo;legal&rdquo; way to do what it does &ndash; sending <code>Message_OpenWindow</code> events to the WIMP for the iconbar &ndash; doesn&rsquo;t appear to work. Instead, the program fakes <key>Shift-F12</key> presses and tries to remember where the bar is. Occasionally it can get this wrong; you may need to move to pointer in and out of the bar to fix it.
+
+</chapter>
+
+
+
+
+<chapter title="Source Code" file="Source">
+
+I have included the source for the module for those who are interested in seeing how the whole things works. You will need Doggysoft&rsquo;s BAX module to get it to assemble.
+
+</chapter>
+
+
+
+
+<literal mode="Text">
+
+Updates and Contacting Me
+-------------------------
+
+  If you have any comments about FindIBar, or would like to report any bugs
+  that you find, you can email me at the address below.
+
+  Updates to FindIBar and more software for RISC OS computers can be found
+  on my website at http://www.stevefryatt.org.uk/software/
+
+  Stephen Fryatt
+  email: steve@stevefryatt.org.uk
+</literal>

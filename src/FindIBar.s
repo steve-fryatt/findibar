@@ -181,7 +181,7 @@ ShowMargin
 
 	SWI	XOS_NewLine
 
-	LDMFD     R13!,{PC}
+	LDMFD	R13!,{PC}
 
 SetMargin
 	MOV	R1,R0

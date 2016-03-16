@@ -28,7 +28,7 @@ ARCHIVE := findibar
 
 MODULE := FindIBar,ffa
 
-OBJS ?= FindIBar.o
+OBJS := FindIBar.o
 
 include $(SFTOOLS_MAKE)/Module
 
